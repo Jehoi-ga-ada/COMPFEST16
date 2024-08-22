@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jago - IT Talent Growth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>Jago</h1>
+    </div>
+    <div class="slogan">
+      <p>Forecast Your Future in IT: Demand Insights, Skill Trends, Smart Learning</p>
+    </div>
+  </header>
+
+  <section class="job-market-trend">
+    <h2>Job Market Trend</h2>
+    <p>What are the currently prospective jobs in the IT field?</p>
+
+    <div id="jobCheckboxes"></div>
+
+    <canvas id="jobMarketTrendChart"></canvas>
+    <div class="data-description">
+      <h4>About the data</h4>
+      <ul>
+        <li>This prediction is based on 1M++ job postings data from Jobstreet Indonesia</li>
+        <li>...</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="job-based-skills">
+    <h2>Job-based Skills</h2>
+    <p>Select job titles and see what skills are in demand!</p>
+    <div class="job-buttons">
+      <!-- Job buttons will be dynamically added here by JavaScript -->
+    </div>
+
+    <!-- Elements to hide initially -->
+    <div id="skills-info" class="hidden">
+      <h3>Most Needed Skills for Selected Job</h3>
+      <canvas id="skillDemandChart"></canvas>
+      <div class="how-to-read">
+        <h4>How to read?</h4>
+        <p>Percentages indicate how often a skill was mentioned in job postings for the selected job.</p>
+      </div>
+      <div class="data-description">
+        <h4>About the data</h4>
+        <ul>
+          <li>This analysis is based on online job postings related to the selected position.</li>
+          <li>...</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses-section" class="hidden">
+    <h2>Get started with these courses!</h2>
+    <!-- Course cards will be dynamically added here by JavaScript -->
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
