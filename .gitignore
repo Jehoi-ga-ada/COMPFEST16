@@ -1,3 +1,6 @@
+# Folders
+model_experiments
+
 # Python
 *.py[cod]
 __pycache__/
@@ -14,8 +17,8 @@ venv/
 # Data files
 data/
 *.csv
-*.h5
-*.json
+# *.h5
+# *.json
 *.pkl
 *.zip
 
