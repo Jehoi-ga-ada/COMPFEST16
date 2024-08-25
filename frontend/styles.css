@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #1c1c3c;
   color: #ffffff;
   margin: 0;
@@ -9,22 +9,44 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   padding: 20px;
   background-color: #2d2d4f;
-  align-items: center;
+}
+
+.symbol img {
+  height: 40px; /* Adjust height to fit nicely before the logo */
+  margin-right: 10px; /* Space between symbol and logo */
+  background-color: #2d2d4f;
+  color: #2d2d4f;
 }
 
 .logo h1 {
   margin: 0;
-  font-size: 24px;
-  color: #42a5f5;
+  font-size: 32px; /* Larger font size for emphasis */
+  background: linear-gradient(to right, #42a5f5, #1e88e5, #0d47a1);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.separator {
+  width: 1px;
+  height: 50px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Vertical line separator color */
+  margin: 0 20px; /* Space between the logo and the slogan */
 }
 
 .slogan p {
   margin: 0;
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 18px; /* Adjust font size for better readability */
+  font-weight: 400;
+  color: #ffffff;
 }
 
 section {
@@ -32,13 +54,13 @@ section {
   margin-bottom: 20px;
 }
 
-h2 {
+h2,
+h3 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-h3 {
-  font-size: 20px;
+h4 {
   margin-top: 20px;
 }
 
@@ -46,6 +68,33 @@ p {
   margin: 10px 0;
 }
 
+/* Job-based Skills Section */
+.job-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+.job-buttons button {
+  background-color: #373759;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  flex: 1 1 calc(25% - 10px); /* Adjust this to control how many buttons fit per row */
+  text-align: center;
+}
+
+.job-buttons button:hover {
+  background-color: #56568b;
+}
+
+/* Graph Section */
 canvas {
   margin-top: 20px;
   background-color: #fff;
@@ -55,65 +104,120 @@ canvas {
   height: 400px;
 }
 
+#skillDemandChart {
+  background-color: #1c1c3c; /* Set the background color of the canvas */
+  border-radius: 8px; /* Optional: round the corners */
+}
+
 .hidden {
   display: none;
 }
 
-.job-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+/* Courses Section */
+#courses-section {
+  margin-top: 40px;
 }
 
-.job-buttons button {
-  background-color: #424274;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.job-buttons button:hover {
-  background-color: #5962a6;
-}
-
-.data-description,
-.how-to-read {
-  margin-top: 20px;
-}
-
-.courses {
-  background-color: #2d2d4f;
-  padding: 20px;
-  border-radius: 8px;
+#courses-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .course {
-  margin-bottom: 10px;
-  padding: 10px;
   background-color: #424274;
+  padding: 15px;
   border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course:hover {
+  transform: scale(1.015);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .course a {
   text-decoration: none;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ensure the course card takes full width */
+}
+
+.course-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Ensures the content spans the entire width */
 }
 
 .course-info {
-  padding: 10px;
+  flex: 1; /* Takes up all the remaining space on the left */
+  padding-right: 20px; /* Space between the text and image */
 }
 
 .course-info h4 {
-  margin: 0 0 5px 0;
   font-size: 18px;
+  margin: 0 0 10px 0;
+  text-decoration: underline;
 }
 
 .course-info p {
-  margin: 0;
+  margin: 0 0 10px 0;
   font-size: 14px;
-  font-weight: 300;
+  color: #c3c3dd;
+}
+
+.course-button {
+  background-color: #6c6ca6;
+  border: none;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.course-button:hover {
+  background-color: #56568b;
+}
+
+.course-image {
+  flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.course-image img {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #6c6ca6; /* Add a border with a color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.course-image img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+/* Data Descriptions and Additional Text */
+.data-description,
+.how-to-read {
+  margin-top: 20px;
+}
+
+.data-description ul,
+.how-to-read ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.data-description li,
+.how-to-read li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #c3c3dd;
 }
