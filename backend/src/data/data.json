@@ -18,7 +18,69 @@
         "2022-08-30"
       ],
       "prediction": [1.2794697284698486],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Python",
+          "percentage": 86.02
+        },
+        {
+          "name": "Machine Learning",
+          "percentage": 82.15
+        },
+        {
+          "name": "Tensorflow",
+          "percentage": 70.54
+        },
+        {
+          "name": "Pytorch",
+          "percentage": 55.27
+        },
+        {
+          "name": "AWS",
+          "percentage": 35.91
+        },
+        {
+          "name": "Deep Learning",
+          "percentage": 34.84
+        },
+        {
+          "name": "Java",
+          "percentage": 30.54
+        },
+        {
+          "name": "Azure",
+          "percentage": 29.68
+        },
+        {
+          "name": "Scala",
+          "percentage": 26.02
+        },
+        {
+          "name": "Data Preparation",
+          "percentage": 25.81
+        },
+        {
+          "name": "Cloud Computing",
+          "percentage": 23.01
+        },
+        {
+          "name": "Spark",
+          "percentage": 22.8
+        },
+        {
+          "name": "Scikitlearn",
+          "percentage": 22.58
+        },
+        {
+          "name": "Numpy",
+          "percentage": 21.72
+        },
+        {
+          "name": "Pandas",
+          "percentage": 21.51
+        }
+      ]
     },
     {
       "name": "Business Analyst",
@@ -38,7 +100,69 @@
         "2022-08-30"
       ],
       "prediction": [36.485923767089844],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "AWS",
+          "percentage": 44.05
+        },
+        {
+          "name": "Project Management",
+          "percentage": 34.77
+        },
+        {
+          "name": "Data Analysis",
+          "percentage": 33.18
+        },
+        {
+          "name": "Communication",
+          "percentage": 30.83
+        },
+        {
+          "name": "SQL",
+          "percentage": 23.76
+        },
+        {
+          "name": "Analytical Skills",
+          "percentage": 20.41
+        },
+        {
+          "name": "Requirements Gathering",
+          "percentage": 17.55
+        },
+        {
+          "name": "Problem Solving",
+          "percentage": 17.43
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 16.71
+        },
+        {
+          "name": "Teamwork",
+          "percentage": 15.0
+        },
+        {
+          "name": "Agile",
+          "percentage": 14.84
+        },
+        {
+          "name": "Business Analyst",
+          "percentage": 12.32
+        },
+        {
+          "name": "Problem-solving",
+          "percentage": 10.7
+        },
+        {
+          "name": "Stakeholder Management",
+          "percentage": 10.65
+        },
+        {
+          "name": "Documentation",
+          "percentage": 10.61
+        }
+      ]
     },
     {
       "name": "Cloud Engineer",
@@ -58,7 +182,69 @@
         "2022-08-30"
       ],
       "prediction": [6.688518047332764],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "AWS",
+          "percentage": 47.91
+        },
+        {
+          "name": "Python",
+          "percentage": 44.87
+        },
+        {
+          "name": "Terraform",
+          "percentage": 39.54
+        },
+        {
+          "name": "Azure",
+          "percentage": 39.16
+        },
+        {
+          "name": "Kubernetes",
+          "percentage": 35.36
+        },
+        {
+          "name": "Docker",
+          "percentage": 27
+        },
+        {
+          "name": "Devops",
+          "percentage": 24.33
+        },
+        {
+          "name": "Powershell",
+          "percentage": 22.81
+        },
+        {
+          "name": "Cloud Computing",
+          "percentage": 21.29
+        },
+        {
+          "name": "Linux",
+          "percentage": 19.39
+        },
+        {
+          "name": "Cloud Engineering",
+          "percentage": 17.87
+        },
+        {
+          "name": "Networking",
+          "percentage": 17.87
+        },
+        {
+          "name": "GcP",
+          "percentage": 17.87
+        },
+        {
+          "name": "Java",
+          "percentage": 17.49
+        },
+        {
+          "name": "Jenkins",
+          "percentage": 16.73
+        }
+      ]
     },
     {
       "name": "Cybersecurity Analyst",
@@ -78,7 +264,69 @@
         "2022-08-30"
       ],
       "prediction": [4.186860084533691],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Incident Rensponse",
+          "percentage": 42.39
+        },
+        {
+          "name": "Cyber Security",
+          "percentage": 38.04
+        },
+        {
+          "name": "Network Security",
+          "percentage": 18.48
+        },
+        {
+          "name": "Cybersecurity",
+          "percentage": 17.39
+        },
+        {
+          "name": "Information Security",
+          "percentage": 16.3
+        },
+        {
+          "name": "Security Operations",
+          "percentage": 16.3
+        },
+        {
+          "name": "Windows",
+          "percentage": 14.13
+        },
+        {
+          "name": "Penetration Testing",
+          "percentage": 14.13
+        },
+        {
+          "name": "Linux",
+          "percentage": 14.13
+        },
+        {
+          "name": "Threat Hunting",
+          "percentage": 14.13
+        },
+        {
+          "name": "Vulnerability Management",
+          "percentage": 14.13
+        },
+        {
+          "name": "Written Communication",
+          "percentage": 11.96
+        },
+        {
+          "name": "Risk Management",
+          "percentage": 11.96
+        },
+        {
+          "name": "Firewalls",
+          "percentage": 10.87
+        },
+        {
+          "name": "Risk Assesment",
+          "percentage": 10.87
+        }
+      ]
     },
     {
       "name": "Data Engineer",
@@ -99,7 +347,69 @@
         "2022-08-30"
       ],
       "prediction": [30.368560791015625],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Python",
+          "percentage": 74.33
+        },
+        {
+          "name": "SQL",
+          "percentage": 63.83
+        },
+        {
+          "name": "Data Engineering",
+          "percentage": 51.97
+        },
+        {
+          "name": "Spark",
+          "percentage": 41.47
+        },
+        {
+          "name": "Java",
+          "percentage": 38.22
+        },
+        {
+          "name": "AWS",
+          "percentage": 36.91
+        },
+        {
+          "name": "Scala",
+          "percentage": 36.62
+        },
+        {
+          "name": "Snowflake",
+          "percentage": 35.94
+        },
+        {
+          "name": "Data Warehousing",
+          "percentage": 32.34
+        },
+        {
+          "name": "Hadoop",
+          "percentage": 32.17
+        },
+        {
+          "name": "Kafka",
+          "percentage": 30.69
+        },
+        {
+          "name": "Machine Learning",
+          "percentage": 24.76
+        },
+        {
+          "name": "Redshift",
+          "percentage": 23.96
+        },
+        {
+          "name": "Data Modelling",
+          "percentage": 23.45
+        },
+        {
+          "name": "Nosql",
+          "percentage": 23.33
+        }
+      ]
     },
     {
       "name": "Data Scientist",
@@ -119,7 +429,69 @@
         "2022-08-30"
       ],
       "prediction": [6.170605659484863],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Python",
+          "percentage": 84.43
+        },
+        {
+          "name": "Machine Learning",
+          "percentage": 75.4
+        },
+        {
+          "name": "Data Science",
+          "percentage": 68.97
+        },
+        {
+          "name": "SQL",
+          "percentage": 60.32
+        },
+        {
+          "name": "R",
+          "percentage": 49.2
+        },
+        {
+          "name": "Data Visualization",
+          "percentage": 39.18
+        },
+        {
+          "name": "Statistics:",
+          "percentage": 38.07
+        },
+        {
+          "name": "Data Analysis",
+          "percentage": 31.77
+        },
+        {
+          "name": "Communication",
+          "percentage": 25.22
+        },
+        {
+          "name": "Data Mining",
+          "percentage": 22.74
+        },
+        {
+          "name": "Spark",
+          "percentage": 22.62
+        },
+        {
+          "name": "Tableau",
+          "percentage": 22.62
+        },
+        {
+          "name": "Computer Science",
+          "percentage": 18.67
+        },
+        {
+          "name": "Tensorflow",
+          "percentage": 17.8
+        },
+        {
+          "name": "AWS",
+          "percentage": 17.8
+        }
+      ]
     },
     {
       "name": "Database Administrator (DBA)",
@@ -139,7 +511,69 @@
         "2022-08-30"
       ],
       "prediction": [7.486966133117676],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "SQL",
+          "percentage": 41.77
+        },
+        {
+          "name": "Database Administration",
+          "percentage": 39.56
+        },
+        {
+          "name": "SQL Server",
+          "percentage": 24.68
+        },
+        {
+          "name": "Oracle",
+          "percentage": 24.05
+        },
+        {
+          "name": "Performance Tuning",
+          "percentage": 19.62
+        },
+        {
+          "name": "Linux",
+          "percentage": 18.67
+        },
+        {
+          "name": "Disaster Recovery",
+          "percentage": 17.41
+        },
+        {
+          "name": "Database Security",
+          "percentage": 17.09
+        },
+        {
+          "name": "Troubleshooting",
+          "percentage": 17.09
+        },
+        {
+          "name": "Database Design",
+          "percentage": 15.19
+        },
+        {
+          "name": "Data Modeling",
+          "percentage": 14.56
+        },
+        {
+          "name": "AWS",
+          "percentage": 14.56
+        },
+        {
+          "name": "Python",
+          "percentage": 13.92
+        },
+        {
+          "name": "Mysql",
+          "percentage": 12.97
+        },
+        {
+          "name": "Communication Skils",
+          "percentage": 12.03
+        }
+      ]
     },
     {
       "name": "DevOps Engineer",
@@ -159,7 +593,69 @@
         "2022-08-30"
       ],
       "prediction": [20.090301513671875],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Devops",
+          "percentage": 67.46
+        },
+        {
+          "name": "Kubernetes",
+          "percentage": 63.58
+        },
+        {
+          "name": "Python",
+          "percentage": 62.93
+        },
+        {
+          "name": "Terraform",
+          "percentage": 59.48
+        },
+        {
+          "name": "AWS",
+          "percentage": 48.49
+        },
+        {
+          "name": "Docker",
+          "percentage": 47.41
+        },
+        {
+          "name": "Ansible",
+          "percentage": 46.98
+        },
+        {
+          "name": "Jenkins",
+          "percentage": 42.46
+        },
+        {
+          "name": "Bash",
+          "percentage": 34.48
+        },
+        {
+          "name": "Automation",
+          "percentage": 32.76
+        },
+        {
+          "name": "GIT",
+          "percentage": 31.47
+        },
+        {
+          "name": "CI/CD",
+          "percentage": 27.16
+        },
+        {
+          "name": "Linux",
+          "percentage": 26.29
+        },
+        {
+          "name": "Azure",
+          "percentage": 23.92
+        },
+        {
+          "name": "Monitoring",
+          "percentage": 22.2
+        }
+      ]
     },
     {
       "name": "IT Consultant",
@@ -179,7 +675,69 @@
         "2022-08-30"
       ],
       "prediction": [40.619544982910156],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Communication",
+          "percentage": 34.7
+        },
+        {
+          "name": "Customer Service",
+          "percentage": 33.09
+        },
+        {
+          "name": "Sales",
+          "percentage": 31.86
+        },
+        {
+          "name": "Communication Skils",
+          "percentage": 18.16
+        },
+        {
+          "name": "Teamwork",
+          "percentage": 17.52
+        },
+        {
+          "name": "Time Management",
+          "percentage": 14.48
+        },
+        {
+          "name": "Problem Solving",
+          "percentage": 13.89
+        },
+        {
+          "name": "Project Management",
+          "percentage": 12.77
+        },
+        {
+          "name": "Problemsolving",
+          "percentage": 11.24
+        },
+        {
+          "name": "Attention To Detail",
+          "percentage": 10.19
+        },
+        {
+          "name": "Leadership",
+          "percentage": 9.46
+        },
+        {
+          "name": "Microsoft Office Suite",
+          "percentage": 9.4
+        },
+        {
+          "name": "Negotiation",
+          "percentage": 9.31
+        },
+        {
+          "name": "Data Analysis",
+          "percentage": 8.82
+        },
+        {
+          "name": "Interpersonal Skills",
+          "percentage": 7.93
+        }
+      ]
     },
     {
       "name": "IT Manager",
@@ -200,7 +758,69 @@
         "2022-08-30"
       ],
       "prediction": [60.98004150390625],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Communication",
+          "percentage": 38.74
+        },
+        {
+          "name": "Leadership",
+          "percentage": 33.81
+        },
+        {
+          "name": "Accounting",
+          "percentage": 22.25
+        },
+        {
+          "name": "Nursing",
+          "percentage": 18.37
+        },
+        {
+          "name": "Teamwork",
+          "percentage": 18.06
+        },
+        {
+          "name": "Project Management",
+          "percentage": 17.98
+        },
+        {
+          "name": "Audit",
+          "percentage": 14.31
+        },
+        {
+          "name": "Problem Solving",
+          "percentage": 14.18
+        },
+        {
+          "name": "Risk Management",
+          "percentage": 13.7
+        },
+        {
+          "name": "Auditing",
+          "percentage": 13.66
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 13.48
+        },
+        {
+          "name": "Problemsolving",
+          "percentage": 12.78
+        },
+        {
+          "name": "Analytical Skills",
+          "percentage": 12.22
+        },
+        {
+          "name": "Time Management",
+          "percentage": 11.21
+        },
+        {
+          "name": "Attention To Detail",
+          "percentage": 11.17
+        }
+      ]
     },
     {
       "name": "IT Project Manager",
@@ -221,7 +841,69 @@
         "2022-08-30"
       ],
       "prediction": [23.262521743774414],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Project Management",
+          "percentage": 66.07
+        },
+        {
+          "name": "Risk Management",
+          "percentage": 39.29
+        },
+        {
+          "name": "Communication",
+          "percentage": 35.2
+        },
+        {
+          "name": "Leadership",
+          "percentage": 23.98
+        },
+        {
+          "name": "It Project Management",
+          "percentage": 22.96
+        },
+        {
+          "name": "Stakeholder Management",
+          "percentage": 20.15
+        },
+        {
+          "name": "Problem Solving",
+          "percentage": 18.37
+        },
+        {
+          "name": "Project Planning",
+          "percentage": 17.86
+        },
+        {
+          "name": "Change Management",
+          "percentage": 17.6
+        },
+        {
+          "name": "PMP Cerification",
+          "percentage": 17.09
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 17.09
+        },
+        {
+          "name": "Agile",
+          "percentage": 16.84
+        },
+        {
+          "name": "Bachelor's Degree",
+          "percentage": 15.31
+        },
+        {
+          "name": "Analytical Skills",
+          "percentage": 15.31
+        },
+        {
+          "name": "Time Management",
+          "percentage": 14.54
+        }
+      ]
     },
     {
       "name": "IT Support Specialist",
@@ -241,7 +923,65 @@
         "2022-08-30"
       ],
       "prediction": [9.61509895324707],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Troubleshooting",
+          "percentage": 55.7
+        },
+        {
+          "name": "It Support",
+          "percentage": 50.63
+        },
+        {
+          "name": "Customer Service",
+          "percentage": 34.18
+        },
+        {
+          "name": "Problemsolving",
+          "percentage": 32.91
+        },
+        {
+          "name": "Active Directory",
+          "percentage": 30.38
+        },
+        {
+          "name": "Communication",
+          "percentage": 20.11
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 26.58
+        },
+        {
+          "name": "Technical Support",
+          "percentage": 25.32
+        },
+        {
+          "name": "Teamwork",
+          "percentage": 22.78
+        },
+        {
+          "name": "Windows",
+          "percentage": 21.52
+        },
+        {
+          "name": "Microsoft 365",
+          "percentage": 16.46
+        },
+        {
+          "name": "Computer Science",
+          "percentage": 16.46
+        },
+        {
+          "name": "Analytical Skills",
+          "percentage": 15.19
+        },
+        {
+          "name": "Azure",
+          "percentage": 15.19
+        }
+      ]
     },
     {
       "name": "Information Security Manager",
@@ -261,7 +1001,69 @@
         "2022-08-30"
       ],
       "prediction": [10.247178077697754],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Risk Management Framework (rmf)",
+          "percentage": 33.9
+        },
+        {
+          "name": "Cybersecurity",
+          "percentage": 30.51
+        },
+        {
+          "name": "Cyber Security",
+          "percentage": 18.64
+        },
+        {
+          "name": "Incident Rensponse",
+          "percentage": 18.64
+        },
+        {
+          "name": "Information Security",
+          "percentage": 16.95
+        },
+        {
+          "name": "Risk Management",
+          "percentage": 16.95
+        },
+        {
+          "name": "RMF",
+          "percentage": 16.95
+        },
+        {
+          "name": "Information Systems",
+          "percentage": 13.56
+        },
+        {
+          "name": "DOD Directive 8570.01m",
+          "percentage": 11.86
+        },
+        {
+          "name": "System Security Plans",
+          "percentage": 11.86
+        },
+        {
+          "name": "Information Security Security",
+          "percentage": 11.86
+        },
+        {
+          "name": "Joint Special Access Program Implementation",
+          "percentage": 11.86
+        },
+        {
+          "name": "Network Security",
+          "percentage": 11.86
+        },
+        {
+          "name": "Configuration Management (cm)",
+          "percentage": 11.86
+        },
+        {
+          "name": "Risk Management Framework",
+          "percentage": 11.86
+        }
+      ]
     },
     {
       "name": "Network Administrator",
@@ -281,7 +1083,70 @@
         "2022-08-30"
       ],
       "prediction": [7.6337714195251465],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+
+      "skills": [
+        {
+          "name": "Network Administration",
+          "percentage": 58.12
+        },
+        {
+          "name": "Troubleshooting",
+          "percentage": 25.9
+        },
+        {
+          "name": "Network Security",
+          "percentage": 32.48
+        },
+        {
+          "name": "Network Troubleshooting",
+          "percentage": 20.51
+        },
+        {
+          "name": "Firewalls",
+          "percentage": 19.66
+        },
+        {
+          "name": "Ccna",
+          "percentage": 19.66
+        },
+        {
+          "name": "Active Directory",
+          "percentage": 18.8
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 17.09
+        },
+        {
+          "name": "Project Management",
+          "percentage": 15.38
+        },
+        {
+          "name": "Cisco",
+          "percentage": 15.38
+        },
+        {
+          "name": "Network Monitoring",
+          "percentage": 14.53
+        },
+        {
+          "name": "Routers",
+          "percentage": 14.53
+        },
+        {
+          "name": "Communication",
+          "percentage": 14.53
+        },
+        {
+          "name": "Vmware",
+          "percentage": 13.68
+        },
+        {
+          "name": "BGP",
+          "percentage": 13.68
+        }
+      ]
     },
     {
       "name": "Quality Assurance (QA) Tester/Engineer",
@@ -302,7 +1167,70 @@
         "2022-08-30"
       ],
       "prediction": [16.741851806640625],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+
+      "skills": [
+        {
+          "name": "Test Cases",
+          "percentage": 37.14
+        },
+        {
+          "name": "Teamwork",
+          "percentage": 28.57
+        },
+        {
+          "name": "IOS",
+          "percentage": 28.57
+        },
+        {
+          "name": "Proofreading",
+          "percentage": 27.14
+        },
+        {
+          "name": "Test Scripts",
+          "percentage": 27.14
+        },
+        {
+          "name": "Translation",
+          "percentage": 25.71
+        },
+        {
+          "name": "MAC 0S X",
+          "percentage": 25.71
+        },
+        {
+          "name": "BUG Tracking Systems",
+          "percentage": 24.29
+        },
+        {
+          "name": "Problemsolving",
+          "percentage": 21.43
+        },
+        {
+          "name": "Jira",
+          "percentage": 20
+        },
+        {
+          "name": "QA Testing",
+          "percentage": 18.57
+        },
+        {
+          "name": "SQL",
+          "percentage": 18.57
+        },
+        {
+          "name": "Linguistic Skills",
+          "percentage": 17.14
+        },
+        {
+          "name": "Fastpaced Environment",
+          "percentage": 17.14
+        },
+        {
+          "name": "Quality Assurance:",
+          "percentage": 15.71
+        }
+      ]
     },
     {
       "name": "Software Developer/Engineer",
@@ -323,7 +1251,70 @@
         "2022-08-30"
       ],
       "prediction": [83.36360168457031],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+
+      "skills": [
+        {
+          "name": "Python",
+          "percentage": 42.69
+        },
+        {
+          "name": "Java",
+          "percentage": 42.48
+        },
+        {
+          "name": "Software Engineering",
+          "percentage": 37.22
+        },
+        {
+          "name": "AWS",
+          "percentage": 33.29
+        },
+        {
+          "name": "SQL",
+          "percentage": 27.77
+        },
+        {
+          "name": "Kubernetes",
+          "percentage": 24.99
+        },
+        {
+          "name": "Docker",
+          "percentage": 24.67
+        },
+        {
+          "name": "Javascript",
+          "percentage": 24.34
+        },
+        {
+          "name": "Software Development",
+          "percentage": 21.31
+        },
+        {
+          "name": "Agile.",
+          "percentage": 21.3
+        },
+        {
+          "name": "C++",
+          "percentage": 18.96
+        },
+        {
+          "name": "Go",
+          "percentage": 17.59
+        },
+        {
+          "name": "Typescript",
+          "percentage": 15.99
+        },
+        {
+          "name": "Communication",
+          "percentage": 15.3
+        },
+        {
+          "name": "Cloud Computing",
+          "percentage": 15.23
+        }
+      ]
     },
     {
       "name": "Systems Analyst",
@@ -344,7 +1335,70 @@
         "2022-08-30"
       ],
       "prediction": [7.806430816650391],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+
+      "skills": [
+        {
+          "name": "Project Management",
+          "percentage": 32.73
+        },
+        {
+          "name": "Communication",
+          "percentage": 24.42
+        },
+        {
+          "name": "SQL",
+          "percentage": 23.62
+        },
+        {
+          "name": "Data Analysis",
+          "percentage": 21.56
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 17.83
+        },
+        {
+          "name": "Problem Solving",
+          "percentage": 17.23
+        },
+        {
+          "name": "Troubleshooting",
+          "percentage": 16.77
+        },
+        {
+          "name": "Analytical Skills",
+          "percentage": 16.7
+        },
+        {
+          "name": "Business Analysis",
+          "percentage": 14.5
+        },
+        {
+          "name": "Bachelor's Degree",
+          "percentage": 12.44
+        },
+        {
+          "name": "Teamwork",
+          "percentage": 12.04
+        },
+        {
+          "name": "Requirements Gathering",
+          "percentage": 11.98
+        },
+        {
+          "name": "Interpersonal Skills",
+          "percentage": 11.84
+        },
+        {
+          "name": "Problemsolving",
+          "percentage": 11.58
+        },
+        {
+          "name": "Business Systems Analysis",
+          "percentage": 10.18
+        }
+      ]
     },
     {
       "name": "Systems Architect",
@@ -364,7 +1418,69 @@
         "2022-08-30"
       ],
       "prediction": [5.952944278717041],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+      "skills": [
+        {
+          "name": "Systems Architecture",
+          "percentage": 19.58
+        },
+        {
+          "name": "Systems Engineering",
+          "percentage": 18.52
+        },
+        {
+          "name": "Python",
+          "percentage": 13.76
+        },
+        {
+          "name": "Project Management",
+          "percentage": 12.7
+        },
+        {
+          "name": "Computer Science",
+          "percentage": 11.64
+        },
+        {
+          "name": "Software Development",
+          "percentage": 11.64
+        },
+        {
+          "name": "Engineering",
+          "percentage": 10.58
+        },
+        {
+          "name": "Communication",
+          "percentage": 10.58
+        },
+        {
+          "name": "Bachelor's Degree",
+          "percentage": 10.58
+        },
+        {
+          "name": "System Architecture",
+          "percentage": 10.58
+        },
+        {
+          "name": "Linux",
+          "percentage": 10.05
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 10.05
+        },
+        {
+          "name": "Analytical Skills",
+          "percentage": 10.05
+        },
+        {
+          "name": "Software Engineering",
+          "percentage": 9.52
+        },
+        {
+          "name": "Java",
+          "percentage": 9.52
+        }
+      ]
     },
     {
       "name": "Technical Support Engineer",
@@ -384,7 +1500,70 @@
         "2022-08-30"
       ],
       "prediction": [50.38508987426758],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+
+      "skills": [
+        {
+          "name": "Troubleshooting",
+          "percentage": 56.25
+        },
+        {
+          "name": "Technical Support",
+          "percentage": 42.19
+        },
+        {
+          "name": "Communication",
+          "percentage": 28.13
+        },
+        {
+          "name": "Customer Service",
+          "percentage": 23.44
+        },
+        {
+          "name": "Linux",
+          "percentage": 23.44
+        },
+        {
+          "name": "Problem Solving",
+          "percentage": 20.31
+        },
+        {
+          "name": "Networking",
+          "percentage": 18.75
+        },
+        {
+          "name": "Communication Skills",
+          "percentage": 18.75
+        },
+        {
+          "name": "Problemsolving",
+          "percentage": 18.75
+        },
+        {
+          "name": "Teamwork",
+          "percentage": 17.19
+        },
+        {
+          "name": "AWS",
+          "percentage": 14.06
+        },
+        {
+          "name": "Project Management",
+          "percentage": 14.06
+        },
+        {
+          "name": "SQL",
+          "percentage": 14.06
+        },
+        {
+          "name": "Analytical Skills",
+          "percentage": 14.06
+        },
+        {
+          "name": "Root Cause Analysis",
+          "percentage": 12.50
+        }
+      ]
     },
     {
       "name": "Web Developer",
@@ -404,7 +1583,66 @@
         "2022-08-30"
       ],
       "prediction": [73.35589599609375],
-      "predictionDates": ["2022-09-29"]
+      "predictionDates": ["2022-09-29"],
+
+      "skills": [
+        {
+          "name": "Javascript",
+          "percentage": 63.50
+        },
+        {
+          "name": "CSS",
+          "percentage": 44.00
+        },
+        {
+          "name": "Html",
+          "percentage": 41.50
+        },
+        {
+          "name": "WEB Development",
+          "percentage": 35.50 
+        },
+        {
+          "name": "PHP",
+          "percentage": 26.50 
+        },
+        {
+          "name": "SQL",
+          "percentage": 22.00
+        },
+        {
+          "name": "GIt",
+          "percentage": 22.00
+        },
+        {
+          "name": "React",
+          "percentage": 19.50
+        },
+        {
+          "name": "Communication",
+          "percentage": 19.50
+        },
+        {
+          "name": "Html5",
+          "percentage": 17.00
+        },
+        {
+          "name": "C#",
+          "percentage": 16.50
+        },
+        {
+          "name": "Java",
+          "percentage": 16.00
+        },
+        {
+          "name": "Angular",
+          "percentage": 15.00
+        },
+        {
+          "name": "AWS",
+          "percentage": 14.50
+        }
+      ]
     }
   ]
 }
