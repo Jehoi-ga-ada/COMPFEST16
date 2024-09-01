@@ -1,6 +1,6 @@
 // Function to fetch and initialize data
 function initializeData() {
-  fetch('/backend/src/data/data-renamed.json')
+  fetch('../backend/src/data/data-renamed.json')
       .then(response => response.json())
       .then(data => {
           // Initialize checkboxes for filtering
@@ -303,7 +303,7 @@ function updateJobMarketTrendChart(data) {
 
 // Initialize Job Buttons
 function initializeJobButtons(data) {
-    fetch('/backend/src/data/coursesData.json')
+    fetch('../backend/src/data/coursesData.json')
         .then(response => response.json())
         .then(coursesData => {
             const jobButtonsContainer = document.querySelector('.job-buttons');
