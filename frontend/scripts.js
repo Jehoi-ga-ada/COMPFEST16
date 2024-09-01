@@ -11,16 +11,6 @@ function initializeData() {
 
           // Initialize the job buttons and skills/courses for the first job by default
           initializeJobButtons(data);
-        //   initializeSkillsAndCourses(data, data.jobs[0].name);
-
-          // const firstJobName = data.jobs[0].name;
-          //   updateSkillsAndCourses(data, firstJobName); // Initialize with the first job by default
-            
-          //   // Optionally, highlight the first button to show it's selected
-          //   document.querySelector(`button:contains(${firstJobName})`).classList.add('active');
-      
-            // Fetch and initialize courses data
-      
         })
       .catch(error => console.error('Error fetching the data:', error));
 }
@@ -38,13 +28,21 @@ function initializeJobMarketTrendChart(data) {
   });
 
   const jobMarketTrendData = {
-      labels: ['Nov 2021', 'Dec 2021', 'Jan 2022', 'Feb 2022', 'Mar 2022'],
-      datasets: selectedJobs.map(job => ({
+    labels: ['Jan 2022', 'Feb 2022', 'Mar 2022', 'Apr 2022', 'May 2022', 'Jun 2022', 'Jul 2022', 'Aug 2022', 'Sep 2022', 'Oct 2022'],
+ 
+    datasets: selectedJobs.map(job => {
+        // Concatenate trend data and prediction data
+        const trendData = job.trendData;
+        const predictionData = job.prediction || []; // Default to empty array if not provided
+        const combinedData = trendData.concat(predictionData);
+  
+        return {
           label: job.name,
-          data: job.trendData,
-          borderColor: getRandomColor(),
+          data: combinedData,
+          borderColor: getJobColor(job.name),
           fill: false
-      }))
+        };
+      })
   };
 
   // Destroy existing chart instance if it exists
@@ -54,79 +52,254 @@ function initializeJobMarketTrendChart(data) {
 
   // Create a new chart
   jobMarketTrendChart = new Chart(ctx1, {
-      type: 'line',
-      data: jobMarketTrendData,
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true
-              }
+    type: 'line',
+    data: jobMarketTrendData,
+    options: {
+      scales: {
+        x: {
+            ticks: {
+              color: '#FFFFFF', // Font color for x-axis ticks
+            },
+            title: {
+              color: '#FFFFFF', // Font color for x-axis title
+            },
+            grid: {
+                color: '#2f2f4f', // Color of the grid lines for the x-axis
+              },
+          },
+          y: {
+            ticks: {
+              color: '#FFFFFF', // Font color for y-axis ticks
+            },
+            title: {
+              color: '#FFFFFF', // Font color for y-axis title
+            },
+            grid: {
+                color: '#2f2f4f', // Color of the grid lines for the y-axis
+              },
+          },
+      },
+      plugins: {
+        tooltip: {
+            bodyColor: '#FFFFFF', // Font color for tooltip body text
+            titleColor: '#FFFFFF', // Font color for tooltip title
+            footerColor: '#FFFFFF', // Font color for tooltip footer
+        },
+        annotation: {
+          annotations: {
+            verticalLine: {
+              type: 'line',
+              xMin: 'Sep 2022',
+              xMax: 'Sep 2022',
+              borderColor: 'white',
+              borderWidth: 2,
+              borderDash: [5, 5], // Dotted line style
+            },
+            leftLabel: {
+              type: 'label',
+              xValue: 'May 2022',
+              yValue: 95, 
+              borderColor: 'rgba(0, 0, 0, 0.8)',
+              padding: { top: 5, bottom: 5, left: 125, right: 10 },
+              color: 'white',
+              font: {
+                size: 12 
+              },
+              content: 'Trend',
+              position: 'top'
+            },
+            rightLabel: {
+              type: 'label',
+              xValue: 'Sep 2022',
+              yValue: 95, 
+              borderColor: 'rgba(0, 0, 0, 0.8)',
+              padding: { top: 5, bottom: 5, left: 125, right: 10 },
+              color: 'white',
+              content: 'Prediction',
+              position: 'top'
+            }
           }
+        },
+        legend : {
+            labels: {
+                // Style the legend box
+                boxWidth: 10, // Width of the legend box
+                boxHeight: 10, // Height of the legend box
+                padding: 10, // Padding around the legend box
+                color: 'black', // Text color
+                font: {
+                  size: 12 // Font size for the legend text
+                },
+                color: '#FFFFFF'
+            }
+        }
       }
+    }
   });
 }
+
 
 function initializeJobCheckboxes(data) {
-  const checkboxesContainer = document.getElementById('jobCheckboxes');
-  data.jobs.forEach(job => {
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.id = `checkbox-${job.name}`;
-      checkbox.value = job.name;
-      checkbox.checked = true; // Initially, all checkboxes are checked
-      checkbox.addEventListener('change', () => {
-          updateJobMarketTrendChart(data); // Trigger chart update on checkbox change
-      });
-
-      const label = document.createElement('label');
-      label.htmlFor = `checkbox-${job.name}`;
-      label.textContent = job.name;
-
-      const checkboxWrapper = document.createElement('div');
-      checkboxWrapper.className = 'checkbox-wrapper'; // Add a class for styling if needed
-      checkboxWrapper.appendChild(checkbox);
-      checkboxWrapper.appendChild(label);
-
-      checkboxesContainer.appendChild(checkboxWrapper);
-  });
-}
-
-function updateJobMarketTrendChart(data) {
-  const ctx1 = document.getElementById('jobMarketTrendChart').getContext('2d');
-
-  const selectedJobs = data.jobs.filter(job => {
-      const checkbox = document.getElementById(`checkbox-${job.name}`);
-      return checkbox && checkbox.checked;
-  });
-
-  const jobMarketTrendData = {
-      labels: ['Nov 2021', 'Dec 2021', 'Jan 2022', 'Feb 2022', 'Mar 2022'],
-      datasets: selectedJobs.map(job => ({
-          label: job.name,
-          data: job.trendData,
-          borderColor: getRandomColor(),
-          fill: false
-      }))
-  };
-
-  // Destroy existing chart instance if it exists
-  if (jobMarketTrendChart) {
-      jobMarketTrendChart.destroy();
+    const checkboxesContainer = document.getElementById('jobCheckboxes');
+    
+    // Add "Select All" checkbox
+    const selectAllCheckbox = document.createElement('input');
+    selectAllCheckbox.type = 'checkbox';
+    selectAllCheckbox.id = 'select-all';
+    selectAllCheckbox.addEventListener('change', () => {
+        const allCheckboxes = document.querySelectorAll('#jobCheckboxes input[type="checkbox"]:not(#select-all)');
+        allCheckboxes.forEach(checkbox => checkbox.checked = selectAllCheckbox.checked);
+        updateJobMarketTrendChart(data); // Update chart when "Select All" is toggled
+    });
+  
+    const selectAllLabel = document.createElement('label');
+    selectAllLabel.htmlFor = 'select-all';
+    selectAllLabel.textContent = 'Select All';
+  
+    checkboxesContainer.appendChild(selectAllCheckbox);
+    checkboxesContainer.appendChild(selectAllLabel);
+  
+    // Add job checkboxes
+    data.jobs.forEach(job => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `checkbox-${job.name}`;
+        checkbox.value = job.name;
+        checkbox.checked = true; // Initially, all checkboxes are checked
+        checkbox.addEventListener('change', () => {
+            updateJobMarketTrendChart(data); // Trigger chart update on checkbox change
+        });
+  
+        const label = document.createElement('label');
+        label.htmlFor = `checkbox-${job.name}`;
+        label.textContent = job.name;
+  
+        const checkboxWrapper = document.createElement('div');
+        checkboxWrapper.className = 'checkbox-wrapper';
+        checkboxWrapper.appendChild(checkbox);
+        checkboxWrapper.appendChild(label);
+  
+        checkboxesContainer.appendChild(checkboxWrapper);
+    });
   }
 
-  // Create a new chart
-  jobMarketTrendChart = new Chart(ctx1, {
+function updateJobMarketTrendChart(data) {
+    const ctx1 = document.getElementById('jobMarketTrendChart').getContext('2d');
+  
+    const selectedJobs = data.jobs.filter(job => {
+        const checkbox = document.getElementById(`checkbox-${job.name}`);
+        return checkbox && checkbox.checked;
+    });
+  
+    const jobMarketTrendData = {
+      labels: ['Jan 2022', 'Feb 2022', 'Mar 2022', 'Apr 2022', 'May 2022', 'Jun 2022', 'Jul 2022', 'Aug 2022', 'Sep 2022', 'Oct 2022'],
+      datasets: selectedJobs.map(job => {
+        // Concatenate trend data and prediction data
+        const trendData = job.trendData;
+        const predictionData = job.prediction || []; // Default to empty array if not provided
+        const combinedData = trendData.concat(predictionData);
+  
+        return {
+          label: job.name,
+          data: combinedData,
+          borderColor: getJobColor(job.name), // Use distinct neon colors
+          fill: false
+        };
+      })
+    };
+  
+    // Destroy existing chart instance if it exists
+    if (jobMarketTrendChart) {
+        jobMarketTrendChart.destroy();
+    }
+  
+    // Create a new chart
+    jobMarketTrendChart = new Chart(ctx1, {
       type: 'line',
       data: jobMarketTrendData,
       options: {
-          scales: {
-              y: {
-                  beginAtZero: true
+        scales: {
+          x: {
+              ticks: {
+                color: '#FFFFFF', // Font color for x-axis ticks
+              },
+              title: {
+                color: '#FFFFFF', // Font color for x-axis title
+              },
+              grid: {
+                  color: '#2f2f4f', // Color of the grid lines for the x-axis
+                },
+            },
+            y: {
+              ticks: {
+                color: '#FFFFFF', // Font color for y-axis ticks
+              },
+              title: {
+                color: '#FFFFFF', // Font color for y-axis title
+              },
+              grid: {
+                  color: '#2f2f4f', // Color of the grid lines for the y-axis
+                },
+            },
+        },
+        plugins: {
+          tooltip: {
+              bodyColor: '#FFFFFF', // Font color for tooltip body text
+              titleColor: '#FFFFFF', // Font color for tooltip title
+              footerColor: '#FFFFFF', // Font color for tooltip footer
+          },
+          annotation: {
+            annotations: {
+              verticalLine: {
+                type: 'line',
+                xMin: 'Sep 2022',
+                xMax: 'Sep 2022',
+                borderColor: 'white',
+                borderWidth: 2,
+                borderDash: [5, 5], // Dotted line style
+              },
+              leftLabel: {
+                type: 'label',
+                xValue: 'May 2022',
+                yValue: 95, 
+                borderColor: 'rgba(0, 0, 0, 0.8)',
+                padding: { top: 5, bottom: 5, left: 125, right: 10 },
+                color: 'white',
+                font: {
+                  size: 12 
+                },
+                content: 'Trend',
+                position: 'top'
+              },
+              rightLabel: {
+                type: 'label',
+                xValue: 'Sep 2022',
+                yValue: 95, 
+                borderColor: 'rgba(0, 0, 0, 0.8)',
+                padding: { top: 5, bottom: 5, left: 125, right: 10 },
+                color: 'white',
+                content: 'Prediction',
+                position: 'top'
+              }
+            }
+          },
+          legend : {
+              labels: {
+                  boxWidth: 10, // Width of the legend box
+                  boxHeight: 10, // Height of the legend box
+                  padding: 10, // Padding around the legend box
+                  color: 'black', // Text color
+                  font: {
+                    size: 12 // Font size for the legend text
+                  },
+                  color: '#FFFFFF'
               }
           }
+        }
       }
-  });
-}
+    });
+  }
+
 
 // Initialize Job Buttons
 function initializeJobButtons(data) {
@@ -279,15 +452,26 @@ function updateCourses(courses) {
   });
 }
 
-// Utility function to get a random color for the charts
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+function getJobColor(jobName) {
+    const jobColors = [
+    '#FF007F', '#00FF00', '#00FFFF', '#FFCC00', '#FF6600', '#CC00FF',
+    '#FF0033', '#66FF99', '#33CCFF', '#FF3399', '#99FFCC', '#FF00FF',
+    '#FFFF00', '#00FFCC', '#FF9900', '#CCFF00', '#FF3366', '#33FF99',
+    '#FF6600', '#FF99FF'
+    ];
+    
+    const jobNames = [
+      'AI / ML Engineer', 'Business Analyst', 'Cloud Engineer', 'Cybersecurity Analyst',
+      'Data Engineer', 'Data Scientist', 'Database Administrator', 'DevOps Engineer',
+      'IT Consultant', 'IT Manager', 'IT Project Manager', 'IT Support Specialist',
+      'Information Security Manager', 'Network Administrator', 'QA Tester/Engineer',
+      'Software Developer/Engineer', 'Systems Analyst', 'Systems Architect',
+      'Technical Support Engineer', 'Web Developer'
+    ];
+  
+    const index = jobNames.indexOf(jobName);
+    return jobColors[index % jobColors.length]; // Ensure color index is within bounds
   }
-  return color;
-}
 
 // Initialize everything when the page loads
 document.addEventListener('DOMContentLoaded', initializeData);

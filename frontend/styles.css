@@ -78,35 +78,36 @@ canvas {
   border-radius: 8px;
   width: 100%;
   max-width: 800px;
-  height: 400px;
+  height: 500px;
 }
 
 .chart-and-checkbox-container {
   display: flex;
-  align-items: flex-start; /* Align items at the start */
-  gap: 20px; /* Space between the chart and checkboxes */
+  align-items: flex-start; 
+  gap: 20px; 
 }
 
 #jobMarketTrendChartContainer {
-  flex: 2; /* Make the chart take more space */
+  flex: 3; 
 }
 
 #jobCheckboxesContainer {
-  flex: 1; /* Make the checkbox section take less space */
+  flex: 1; 
   display: flex;
-  flex-direction: column; /* Ensure checkboxes stack vertically */
+  flex-direction: column; 
+  margin-top: 20px;
 }
 
 #jobMarketTrendChart {
-  background-color: #fff; /* Background color of the canvas */
-  border-radius: 8px; /* Rounded corners for the chart */
-  max-width: 100%; /* Ensure the chart doesn't overflow */
-  height: 500px; /* Set a fixed height for the chart */
+  background-color: #1c1c3c; 
+  border-radius: 8px; 
+  max-width: 100%; 
+  /* height: 500px;  */
 }
 
 #skillDemandChart {
-  background-color: #1c1c3c; /* Set the background color of the canvas */
-  border-radius: 8px; /* Optional: round the corners */
+  background-color: #1c1c3c; 
+  border-radius: 8px; 
 }
 
 .hidden {
@@ -122,6 +123,7 @@ canvas {
 }
 
 .job-buttons button {
+  font-weight: 400;
   font-family: 'Poppins', sans-serif;
   background-color: #424274;
   border: none;
