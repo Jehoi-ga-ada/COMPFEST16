@@ -323,6 +323,9 @@ function initializeJobButtons(data) {
 function updateSkillsAndCourses(data, jobName, coursesData) {
   const job = data.jobs.find(j => j.name === jobName);
   const courses = coursesData[jobName];
+  const skillsInfo = document.getElementById('skills-info');
+  const skillsHeader = skillsInfo.querySelector('h3');
+  skillsHeader.textContent = `Most Needed Skills for ${job.name}`;
 
   if (job) {
       // Show the hidden sections
