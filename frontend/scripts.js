@@ -1,6 +1,6 @@
 // Function to fetch and initialize data
 function initializeData() {
-  fetch('data.json')
+  fetch('/backend/src/data/data-renamed.json')
       .then(response => response.json())
       .then(data => {
           // Initialize checkboxes for filtering
@@ -11,14 +11,17 @@ function initializeData() {
 
           // Initialize the job buttons and skills/courses for the first job by default
           initializeJobButtons(data);
-          initializeSkillsAndCourses(data, data.jobs[0].name);
+        //   initializeSkillsAndCourses(data, data.jobs[0].name);
 
           // const firstJobName = data.jobs[0].name;
           //   updateSkillsAndCourses(data, firstJobName); // Initialize with the first job by default
             
           //   // Optionally, highlight the first button to show it's selected
           //   document.querySelector(`button:contains(${firstJobName})`).classList.add('active');
-      })
+      
+            // Fetch and initialize courses data
+      
+        })
       .catch(error => console.error('Error fetching the data:', error));
 }
 
@@ -127,20 +130,27 @@ function updateJobMarketTrendChart(data) {
 
 // Initialize Job Buttons
 function initializeJobButtons(data) {
-  const jobButtonsContainer = document.querySelector('.job-buttons');
-  data.jobs.forEach(job => {
-      const button = document.createElement('button');
-      button.textContent = job.name;
-      button.addEventListener('click', () => {
-          updateSkillsAndCourses(data, job.name);
-      });
-      jobButtonsContainer.appendChild(button);
-  });
+    fetch('/backend/src/data/coursesData.json')
+        .then(response => response.json())
+        .then(coursesData => {
+            const jobButtonsContainer = document.querySelector('.job-buttons');
+            data.jobs.forEach(job => {
+                const button = document.createElement('button');
+                button.textContent = job.name;
+                button.addEventListener('click', () => {
+                    updateSkillsAndCourses(data, job.name, coursesData);
+                });
+                jobButtonsContainer.appendChild(button);
+            });
+        })
+    .catch(error => console.error('Error fetching the courses data:', error));
 }
 
 // Update Skills and Courses based on selected job
-function updateSkillsAndCourses(data, jobName) {
+function updateSkillsAndCourses(data, jobName, coursesData) {
   const job = data.jobs.find(j => j.name === jobName);
+  const courses = coursesData[jobName];
+
   if (job) {
       // Show the hidden sections
       document.getElementById('skills-info').classList.remove('hidden');
@@ -149,7 +159,7 @@ function updateSkillsAndCourses(data, jobName) {
       // Update the skills chart
       updateSkills(job.skills);
       // Update the courses
-      updateCourses(job.courses);
+      updateCourses(courses);
   }
 }
 
@@ -165,25 +175,79 @@ function updateSkills(skills) {
       skillDemandChart.destroy();
   }
 
+  Chart.register(ChartDataLabels);
+
   // Create a new chart
   skillDemandChart = new Chart(ctx2, {
       type: 'bar',
       data: {
           labels: skillLabels,
           datasets: [{
-              label: 'Percentage of Job Postings',
-              data: skillData,
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              borderWidth: 1
+            label: "Percentage of Job Postings",
+            data: skillData,
+            backgroundColor: skillData.map((_, index) =>
+              index % 2 === 0 ? "#8a7fd3" : "#ff69b4"
+            ), // Alternate between purple and pink
+            borderColor: skillData.map((_, index) =>
+              index % 2 === 0 ? "#8a7fd3" : "#ff69b4"
+            ), // Border colors match the bar colors
+            borderWidth: 1,
+            borderRadius: 5, // Rounded corners
+            barThickness: 30, // Controls the thickness of the bars
+            hoverBackgroundColor: skillData.map((_, index) =>
+              index % 2 === 0 ? "#6c5ab8" : "#ff1493"
+            ),
           }]
       },
       options: {
-          scales: {
-              y: {
-                  beginAtZero: true
-              }
-          }
+        maintainAspectRation: false,
+        indexAxis: "y", // Horizontal bars
+        scales: {
+          x: {
+            beginAtZero: true,
+            max: 100, // Ensure the x-axis runs from 0 to 100
+            grid: {
+              color: "#2f2f4f", // Grid line color
+            },
+            ticks: {
+              color: "#FFFFFF", // X-axis label color
+            },
+          },
+          y: {
+            grid: {
+              display: false, // Remove grid lines for the Y-axis
+            },
+            ticks: {
+              color: "#FFFFFF", // Y-axis label color
+              font: {
+                size: 14, // Font size for skill labels
+                weight: "500", // Font weight for skill labels
+              },
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            display: false, // Hide the legend
+          },
+          tooltip: {
+            backgroundColor: "#424274", // Tooltip background color
+            titleFont: { size: 14 },
+            bodyFont: { size: 14 },
+            footerFont: { size: 14 },
+            cornerRadius: 5, // Tooltip corner radius
+          },
+          datalabels: {
+            anchor: "end",
+            align: "right",
+            color: "#c3c3dd",
+            font: {
+              size: 14,
+              weight: "bold",
+            },
+            formatter: (value) => value + '%',
+          },
+        },
       }
   });
 }
@@ -199,11 +263,17 @@ function updateCourses(courses) {
       courseElement.className = 'course';
       courseElement.innerHTML = `
           <a href="${course.url}" target="_blank">
-              <div class="course-info">
-                  <h4>${course.title}</h4>
-                  <p>by ${course.provider}</p>
-              </div>
-          </a>
+          <div class="course-content">
+            <div class="course-info">
+              <h4>${course.title}</h4>
+              <p>by ${course.provider}</p>
+              <button class="course-button">Available on Udemy</button>
+            </div>
+            <div class="course-image">
+              <img src="${course.image}" alt="${course.title}">
+            </div>
+          </div>
+        </a>
       `;
       coursesContainer.appendChild(courseElement);
   });

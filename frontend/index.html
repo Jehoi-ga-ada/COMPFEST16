@@ -4,18 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jago - IT Talent Growth</title>
+  <title>SkillCast - IT Talent Growth</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="scripts.js"></script>
 </head>
 
 <body>
   <header>
-    <div class="logo">
-      <h1>Jago</h1>
+    <div class="symbol">
+      <img src="assets/logo/logo.png" alt="logo" />
     </div>
+    <div class="logo">
+      <h1>SkillCast</h1>
+    </div>
+    <div class="separator"></div>
     <div class="slogan">
-      <p>Forecast Your Future in IT: Demand Insights, Skill Trends, Smart Learning</p>
+      <p>
+        Forecast Your Future in IT: Demand Insights, Skill Trends, Smart
+        Learning
+      </p>
     </div>
   </header>
 
@@ -23,9 +33,16 @@
     <h2>Job Market Trend</h2>
     <p>What are the currently prospective jobs in the IT field?</p>
 
-    <div id="jobCheckboxes"></div>
-
-    <canvas id="jobMarketTrendChart"></canvas>
+    <div class="chart-and-checkbox-container">
+      <div id="jobMarketTrendChartContainer">
+        <canvas id="jobMarketTrendChart"></canvas>
+        </div>
+    
+        <div id="jobCheckboxesContainer">
+          <div id="jobCheckboxes"></div>
+        </div>
+    </div>
+    
     <div class="data-description">
       <h4>About the data</h4>
       <ul>
@@ -63,10 +80,9 @@
   <section id="courses-section" class="hidden">
     <h2>Get started with these courses!</h2>
     <!-- Course cards will be dynamically added here by JavaScript -->
+    <div id="courses-container"></div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="scripts.js"></script>
 </body>
 
 </html>
