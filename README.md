@@ -12,7 +12,7 @@
 - [Contact](#contact)
 
 ## Introduction
-A brief introduction to your project. Explain what it does, why it exists, and its main functionalities.
+SkillCast is a platform designed to forecast trends in the IT job market, providing insights on in-demand skills and offering targeted learning resources. By analyzing job postings data from platforms like Jobstreet and LinkedIn, SkillCast helps users stay ahead in their IT careers.
 
 ## Features
 - List your project's main features
