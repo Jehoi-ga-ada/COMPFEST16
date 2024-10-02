@@ -9,6 +9,9 @@ function initializeData() {
           // Initialize the job market trend chart with all jobs initially
           initializeJobMarketTrendChart(data);
 
+          // Initialize growth rate table
+          initializeTable(data);
+
           // Initialize the job buttons and skills/courses for the first job by default
           initializeJobButtons(data);
         })
@@ -136,6 +139,77 @@ function initializeJobMarketTrendChart(data) {
       }
     }
   });
+}
+
+function initializeTable(data) {
+  const tableBody = document.querySelector("#jobsTable tbody");
+  tableBody.innerHTML = ""; // Clear any existing rows
+
+  data.jobs.forEach(job => {
+      const avgGrowthClass = job["avg_monthly_growth (%)"] > 0 ? "positive" : "negative";
+      const expectedGrowthClass = job["expected_growth (%)"] > 0 ? "positive" : "negative";
+
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+          <td>${job.name}</td>
+          <td class="${avgGrowthClass}">${job["avg_monthly_growth (%)"].toFixed(2)}</td>
+          <td class="${expectedGrowthClass}">${job["expected_growth (%)"].toFixed(2)}</td>
+        `;
+      tableBody.appendChild(row);
+  });
+
+  // Add sorting functionality to headers
+  document.querySelectorAll("#jobsTable th").forEach((header, index) => {
+      // Initialize sort direction for each column header
+      header.setAttribute("data-sort-dir", "asc");
+      header.addEventListener("click", () => sortTable(index, header));
+  });
+}
+
+function sortTable(columnIndex, header) {
+  const table = document.getElementById("jobsTable");
+  const rows = Array.from(table.rows).slice(1); // Get rows, skipping the header
+
+  // Get current sort direction for this column and toggle it
+  let direction = header.getAttribute("data-sort-dir");
+  direction = direction === "asc" ? "desc" : "asc";
+  header.setAttribute("data-sort-dir", direction);
+
+  // Reset all other headers to remove the triangle indicator
+  document.querySelectorAll("#jobsTable th").forEach((th, idx) => {
+      if (idx !== columnIndex) {
+          th.classList.remove("asc", "desc");
+          th.removeAttribute("data-sort-dir"); // Clear sort direction for other columns
+      }
+  });
+
+  // Apply the correct class to the current header based on direction
+  header.classList.toggle("asc", direction === "asc");
+  header.classList.toggle("desc", direction === "desc");
+
+  // Check if the column contains numbers or strings
+  const isNumericColumn = !isNaN(parseFloat(rows[0].cells[columnIndex].innerText));
+
+  // Sort the rows based on the column's content and direction
+  rows.sort((rowA, rowB) => {
+      const cellA = rowA.cells[columnIndex].innerText;
+      const cellB = rowB.cells[columnIndex].innerText;
+
+      if (isNumericColumn) {
+          // Sort numerically
+          const numA = parseFloat(cellA);
+          const numB = parseFloat(cellB);
+          return direction === "asc" ? numA - numB : numB - numA;
+      } else {
+          // Sort alphabetically
+          return direction === "asc" ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+      }
+  });
+
+  // Reorder rows in the table body
+  const tableBody = table.querySelector("tbody");
+  rows.forEach(row => tableBody.appendChild(row));
 }
 
 
