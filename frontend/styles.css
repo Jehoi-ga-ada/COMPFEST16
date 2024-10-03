@@ -15,38 +15,33 @@ header {
 }
 
 .symbol img {
-  height: 40px; /* Adjust height to fit nicely before the logo */
-  margin-right: 10px; /* Space between symbol and logo */
+  height: 40px;
+  margin-right: 10px;
   background-color: #2d2d4f;
   color: #2d2d4f;
 }
 
 .logo h1 {
   margin: 0;
-  font-size: 32px; /* Larger font size for emphasis */
+  font-size: 32px;
   background: linear-gradient(to right, #42a5f5, #1e88e5, #0d47a1);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
+.slogan p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
 .separator {
   width: 1px;
   height: 50px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Vertical line separator color */
-  margin: 0 20px; /* Space between the logo and the slogan */
-}
-
-.slogan p {
-  margin: 0;
-  font-size: 18px; /* Adjust font size for better readability */
-  font-weight: 400;
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 20px;
 }
 
 section {
@@ -54,7 +49,10 @@ section {
   margin-bottom: 20px;
 }
 
-h2,
+h2 {
+  font-size: 24px;
+}
+
 h3 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -62,13 +60,100 @@ h3 {
 
 h4 {
   margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 p {
   margin: 10px 0;
 }
 
-/* Job-based Skills Section */
+canvas {
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+}
+
+.chart-and-checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#jobMarketTrendChartContainer {
+  flex: 3;
+}
+
+#jobCheckboxesContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#jobMarketTrendChart {
+  background-color: #1c1c3c;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* Emerging Jobs Section */
+.emerging-jobs {
+  padding: 20px;
+  background-color: #1c1c3c;
+  color: #ffffff;
+}
+
+.emerging-jobs h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.emerging-jobs-table {
+  margin-top: 20px;
+}
+
+.emerging-jobs-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.emerging-jobs-table th,
+.emerging-jobs-table td {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.emerging-jobs-table th {
+  background-color: #2d2d4f;
+}
+
+.emerging-jobs-table td {
+  background-color: #1c1c3c;
+}
+
+.growth-positive {
+  color: #00ff00; /* Green color for positive growth */
+}
+
+.growth-negative {
+  color: #ff0000; /* Red color for negative growth */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Job-Based Skills Section */
+.job-based-skills {
+  padding: 20px;
+}
+
 .job-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +163,9 @@ p {
 }
 
 .job-buttons button {
-  background-color: #373759;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  background-color: #424274;
   border: none;
   color: white;
   padding: 10px 15px;
@@ -86,31 +173,30 @@ p {
   border-radius: 8px;
   transition: background-color 0.3s;
   font-size: 14px;
-  flex: 1 1 calc(25% - 10px); /* Adjust this to control how many buttons fit per row */
+  flex: 1 1 calc(25% - 10px);
   text-align: center;
 }
 
 .job-buttons button:hover {
-  background-color: #56568b;
+  background-color: #5962a6;
 }
 
-/* Graph Section */
-canvas {
+.data-description,
+.how-to-read {
   margin-top: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 800px;
-  height: 400px;
 }
 
-#skillDemandChart {
-  background-color: #1c1c3c; /* Set the background color of the canvas */
-  border-radius: 8px; /* Optional: round the corners */
+.data-description ul,
+.how-to-read ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.hidden {
-  display: none;
+.data-description li,
+.how-to-read li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #c3c3dd;
 }
 
 /* Courses Section */
@@ -143,19 +229,19 @@ canvas {
   color: #ffffff;
   display: flex;
   align-items: center;
-  width: 100%; /* Ensure the course card takes full width */
+  width: 100%;
 }
 
 .course-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%; /* Ensures the content spans the entire width */
+  width: 100%;
 }
 
 .course-info {
-  flex: 1; /* Takes up all the remaining space on the left */
-  padding-right: 20px; /* Space between the text and image */
+  flex: 1;
+  padding-right: 20px;
 }
 
 .course-info h4 {
@@ -194,13 +280,13 @@ canvas {
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
-  border: 2px solid #6c6ca6; /* Add a border with a color */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  border: 2px solid #6c6ca6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .course-image img:hover {
-  transform: scale(1.05); /* Slightly enlarge the image on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Data Descriptions and Additional Text */
@@ -220,4 +306,122 @@ canvas {
   margin-bottom: 5px;
   font-size: 14px;
   color: #c3c3dd;
+}
+
+/* Job-Based Skills Chart Specific Styles */
+#skillDemandChart {
+  background-color: #1c1c3c; /* Dark background for the chart */
+  border-radius: 8px;
+}
+
+.chartjs-render-monitor {
+  background-color: transparent; /* Ensure chart background is transparent */
+}
+
+/* Triangle Indicators */
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 5px; /* Space between triangle and text */
+}
+
+.triangle-up {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid #00ff00; /* Green for upward growth */
+}
+
+.triangle-down {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #ff0000; /* Red for downward growth */
+}
+
+.monthly-rate-header {
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 10px; /* Space between header and body */
+  font-size: 14px; /* Reduced font size */
+}
+
+.monthly-rate-header div {
+  flex: 1; /* Equal space for each column */
+  text-align: center; /* Center text in headers */
+  padding: 8px; /* Padding for better spacing */
+  border-bottom: 2px solid #fff; /* Optional: border for header */
+}
+
+.monthly-rate-row {
+  display: flex;
+  margin-bottom: 5px; /* Add spacing between rows */
+  font-size: 12px; /* Reduced font size for rows */
+}
+
+#monthly-rate-body div {
+  flex: 1; /* Ensure all cells take equal space */
+  text-align: center; /* Center text in cells */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Softer border for rows */
+  padding: 6px; /* Add padding for cells */
+}
+
+/* Optional: Add styling for the container */
+#monthly-rate-container {
+  background-color: #2d2d4f; /* Background for better contrast */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding around the container */
+}
+
+.triangle-button {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 7px solid white; /* Pointing down initially */
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.triangle-button.sort-asc {
+  border-bottom: none;
+  border-top: 7px solid white; /* Pointing up when sorted ascending */
+}
+
+.triangle-button.sort-desc {
+  border-bottom: 7px solid white; /* Pointing down when sorted descending */
+}
+
+.emerging-jobs-table {
+  margin-top: 20px;
+  width: 100%; /* Make table take full width */
+}
+
+.emerging-jobs-table table {
+  width: 100%; /* Ensure table takes the full width of its container */
+  border-collapse: collapse; /* Remove gaps between borders */
+}
+
+.emerging-jobs-table th,
+.emerging-jobs-table td {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.emerging-jobs-table th {
+  background-color: #2d2d4f;
+}
+
+.emerging-jobs-table td {
+  background-color: #1c1c3c;
+}
+
+#monthly-rate-container {
+  background-color: #2d2d4f; /* Background for better contrast */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding around the container */
+  margin: 0; /* Remove any margin to fit exactly */
+  width: 100%; /* Make sure it also spans full width */
 }

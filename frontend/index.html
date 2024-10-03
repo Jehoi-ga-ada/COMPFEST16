@@ -9,11 +9,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <!-- Include Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@latest"></script>
+    <!-- Defer the loading of the main script to ensure DOM is ready -->
+    <script src="scripts.js" defer></script>
   </head>
-
   <body>
     <header>
       <div class="symbol">
@@ -31,119 +33,106 @@
       </div>
     </header>
 
+    <!-- Job Market Trend Section -->
     <section class="job-market-trend">
       <h2>Job Market Trend</h2>
       <p>What are the currently prospective jobs in the IT field?</p>
-
-      <div id="jobCheckboxes"></div>
-
-      <canvas id="jobMarketTrendChart"></canvas>
+      <div class="chart-and-checkbox-container">
+        <div id="jobMarketTrendChartContainer">
+          <canvas id="jobMarketTrendChart"></canvas>
+        </div>
+        <div id="jobCheckboxesContainer">
+          <div id="jobCheckboxes"></div>
+        </div>
+      </div>
       <div class="data-description">
         <h4>About the data</h4>
         <ul>
           <li>
-            This prediction is based on 1M++ job postings data from Jobstreet
-            Indonesia
+            - This prediction is based on 600k++ data from Jobstreet Indonesia
           </li>
-          <li>lalallaa</li>
-          <li>lalallaa</li>
-          <li>lalalallala</li>
+          <li>
+            - The graph shows the average job postings in the last 30 days
+          </li>
+          <li>
+            - The prediction shows the expected job postings in the next 30 days
+          </li>
         </ul>
       </div>
     </section>
 
+    <!-- Emerging Jobs Section -->
+    <section class="emerging-jobs">
+      <h2>Emerging Jobs</h2>
+      <p>Check out the fastest-growing jobs in the IT sector!</p>
+      <div class="checkbox-container">
+        <input type="checkbox" id="show-monthly-rate" />
+        <label for="show-monthly-rate">Show Monthly Rate</label>
+      </div>
+      <div id="monthly-rate-container" class="hidden">
+        <h3>Monthly Rate</h3>
+        <div class="monthly-rate-header">
+          <div>Job Title</div>
+          <div>Jan-Feb</div>
+          <div>Feb-Mar</div>
+          <div>Mar-Apr</div>
+          <div>Apr-May</div>
+          <div>May-Jun</div>
+          <div>Jun-Jul</div>
+          <div>Jul-Aug</div>
+          <div>Aug-Sep</div>
+          <div>Expected Growth</div>
+        </div>
+        <div id="monthly-rate-body">
+          <!-- Monthly rates will be populated here dynamically -->
+        </div>
+      </div>
+      <table class="emerging-jobs-table">
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Overall Monthly Average Growth</th>
+            <th>
+              Expected Growth
+              <span id="sort-button" class="triangle-button"></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="emerging-jobs-body">
+          <!-- Rows will be populated here dynamically -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Job-based Skills Section -->
     <section class="job-based-skills">
-      <h2>Job-Based Skills</h2>
+      <h2>Job-based Skills</h2>
       <p>Select job titles and see what skills are in demand!</p>
       <div class="job-buttons">
-        <!-- Manually added job buttons -->
-        <button onclick="updateSkillsAndCourses('AI / ML Engineer')">
-          AI / ML Engineer
-        </button>
-        <button onclick="updateSkillsAndCourses('Business Analyst')">
-          Business Analyst
-        </button>
-        <button onclick="updateSkillsAndCourses('Cloud Engineer')">
-          Cloud Engineer
-        </button>
-        <button onclick="updateSkillsAndCourses('Cybersecurity Analyst')">
-          Cybersecurity Analyst
-        </button>
-        <button onclick="updateSkillsAndCourses('Data Engineer')">
-          Data Engineer
-        </button>
-        <button onclick="updateSkillsAndCourses('Data Scientist')">
-          Data Scientist
-        </button>
-        <button onclick="updateSkillsAndCourses('Database Administrator')">
-          Database Administrator
-        </button>
-        <button onclick="updateSkillsAndCourses('DevOps Engineer')">
-          DevOps Engineer
-        </button>
-        <button onclick="updateSkillsAndCourses('IT Consultant')">
-          IT Consultant
-        </button>
-        <button onclick="updateSkillsAndCourses('IT Manager')">
-          IT Manager
-        </button>
-        <button onclick="updateSkillsAndCourses('IT Project Manager')">
-          IT Project Manager
-        </button>
-        <button onclick="updateSkillsAndCourses('IT Support Specialist')">
-          IT Support Specialist
-        </button>
-        <button
-          onclick="updateSkillsAndCourses('Information Security Manager')"
-        >
-          Information Security Manager
-        </button>
-        <button onclick="updateSkillsAndCourses('Network Administrator')">
-          Network Administrator
-        </button>
-        <button onclick="updateSkillsAndCourses('QA Engineer')">
-          QA Engineer
-        </button>
-        <button onclick="updateSkillsAndCourses('Software Developer')">
-          Software Developer
-        </button>
-        <button onclick="updateSkillsAndCourses('Systems Analyst')">
-          Systems Analyst
-        </button>
-        <button onclick="updateSkillsAndCourses('Systems Architect')">
-          Systems Architect
-        </button>
-        <button onclick="updateSkillsAndCourses('Technical Support Engineer')">
-          Technical Support Engineer
-        </button>
-        <button onclick="updateSkillsAndCourses('Web Developer')">
-          Web Developer
-        </button>
+        <!-- Job buttons will be dynamically added here by JavaScript -->
       </div>
-    </section>
 
-    <section id="skills-section" class="hidden">
-      <h3 id="skills-title" class="animate-title">Most Needed Skills</h3>
-      <canvas id="skillDemandChart"></canvas>
-      <div class="how-to-read">
-        <h4>How to read?</h4>
-        <p>
-          Percentages indicate how often a skill was mentioned in job postings
-          for the selected job.
-        </p>
-      </div>
-      <div class="data-description">
-        <h4>About the data</h4>
-        <ul>
-          <li>
-            This analysis is based on online job postings related to the
-            selected position.
-          </li>
-          <li>
-            This analysis is based on online job postings related to the
-            selected position.
-          </li>
-        </ul>
+      <!-- Elements to hide initially -->
+      <div id="skills-info" class="hidden">
+        <h3>Most Needed Skills for Selected Job</h3>
+        <canvas id="skillDemandChart"></canvas>
+        <div class="how-to-read">
+          <h4>How to read?</h4>
+          <p>
+            Percentages indicate how often a skill was mentioned in job postings
+            for the selected job.
+          </p>
+        </div>
+        <div class="data-description">
+          <h4>About the data</h4>
+          <ul>
+            <li>- The analysis is based on 1.3M job postings from Linkedin.</li>
+            <li>
+              - Skills were extracted by performing Named Entity Recognition
+              (NER) on job descriptions.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 

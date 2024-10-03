@@ -1,21 +1,21 @@
 {
-  "AI / ML Engineer": [
+  "Artificial Intelligence/Machine Learning (AI/ML) Engineer": [
     {
       "title": "The Data Science Course: Complete Data Science Bootcamp 2024",
       "provider": "Udemy",
-      "url": "#",
+      "url": "https://www.udemy.com/course/the-data-science-course-complete-data-science-bootcamp/?couponCode=OF83024E",
       "image": "assets/courses/AI Engineer/1.png"
     },
     {
       "title": "Deep Learning A-Z: Neural Networks, AI & ChatGPT Prize",
       "provider": "Udemy",
-      "url": "#",
+      "url": "https://www.udemy.com/course/deeplearning/",
       "image": "assets/courses/AI Engineer/2.png"
     },
     {
       "title": "TensorFlow 2.0: Deep Learning and Artificial Intelligence",
       "provider": "Udemy",
-      "url": "#",
+      "url": "https://www.udemy.com/course/deep-learning-tensorflow-2/",
       "image": "assets/courses/AI Engineer/3.png"
     }
   ],
@@ -279,7 +279,7 @@
       "image": "assets/courses/Network Administrator/3.png"
     }
   ],
-  "QA Engineer": [
+  "QA Tester/Engineer": [
     {
       "title": "The Complete 2024 Software Testing Bootcamp",
       "provider": "Udemy",
@@ -299,7 +299,7 @@
       "image": "assets/courses/QA Engineer/3.png"
     }
   ],
-  "Software Developer": [
+  "Software Developer/Engineer": [
     {
       "title": "Software Development From A to Z - Beginner's Complete Guide",
       "provider": "Udemy",
@@ -324,19 +324,19 @@
       "title": "IT Business Analyst & Project Managers Technical Awareness",
       "provider": "Udemy",
       "url": "https://www.udemy.com/course/business-analyst-managers-intro-to-software-development/?couponCode=SKILLS4SALEB",
-      "image": "assets/courses/System Analyst/1.png"
+      "image": "assets/courses/Systems Analyst/1.png"
     },
     {
       "title": "Fundamentals of Business Analysis",
       "provider": "Udemy",
       "url": "https://www.udemy.com/course/businessanalysis/?couponCode=SKILLS4SALEB",
-      "image": "assets/courses/System Analyst/2.png"
+      "image": "assets/courses/Systems Analyst/2.png"
     },
     {
       "title": "The Business Intelligence Analyst Course 2024",
       "provider": "Udemy",
       "url": "https://www.udemy.com/course/the-business-intelligence-analyst-course-2018/?couponCode=SKILLS4SALEB",
-      "image": "assets/courses/System Analyst/3.png"
+      "image": "assets/courses/Systems Analyst/3.png"
     }
   ],
   "Systems Architect": [
