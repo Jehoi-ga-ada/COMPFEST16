@@ -51,6 +51,29 @@
         <li>- The prediction shows the expected job postings in the next 30 days</li>
       </ul>
     </div>
+
+    <div class="growth-table-container">
+      <h3>Growth Trends</h4>
+      <div class="row-container">
+        <p>Find out emerging and plummeting jobs from its growth trend over the months.</p>
+        <div>
+          <input type="checkbox" id="showMonthlyGrowth" />
+          <label for="showMonthlyGrowth">Show Monthly Growth</label>
+        </div>
+      </div>
+      <table id="jobsTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Job Title</th>
+            <th onclick="sortTable(1)">Average Monthly Growth</th>
+            <th onclick="sortTable(0)">Expected Growth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be dynamically added here by JavaScript -->
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section class="job-based-skills">

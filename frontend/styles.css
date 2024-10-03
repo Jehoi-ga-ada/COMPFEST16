@@ -55,14 +55,16 @@ section {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   padding-top: 0px;
+  margin-bottom: 0px;
 }
 
 h3 {
   font-size: 24px;
   margin-bottom: 10px;
   padding-top: 20px;
+  margin-bottom: 0px;
 }
 
 h4 {
@@ -72,6 +74,22 @@ h4 {
 
 p {
   margin: 10px 0;
+}
+
+.row-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+  padding: 10px 0;
+}
+
+.row-container p {
+  margin: 0; 
+}
+
+.row-container div {
+  margin-left: auto; 
 }
 
 canvas {
@@ -105,13 +123,103 @@ canvas {
   background-color: #1c1c3c; 
   border-radius: 8px; 
   max-width: 100%; 
-  /* height: 500px;  */
 }
 
 #skillDemandChart {
   background-color: #1c1c3c; 
   border-radius: 8px; 
 }
+
+/* Growth Rate Section */
+.table-container {
+  margin: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background-color: #0f3460;
+}
+
+th, td {
+  padding: 8px;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+th {
+  cursor: pointer;
+  background-color: #36366d;
+  color: white;
+  /* text-transform: uppercase; */
+  position: relative;
+}
+
+th:hover {
+  background-color: #242452;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #2d2d4f25;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #2d2d4f7c;
+}
+
+td {
+  color: #fff;
+}
+
+th:after {
+  content: ''; /* Default, no arrow */
+  position: absolute;
+  right: 10px;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+/* Show the up arrow when sorted ascending */
+th.asc:after {
+  content: '\25B2'; /* Upward triangle */
+}
+
+/* Show the down arrow when sorted descending */
+th.desc:after {
+  content: '\25BC'; /* Downward triangle */
+}
+
+/* Green triangle and green text for positive values */
+.positive {
+  color: rgb(21, 176, 21);
+}
+
+.positive::before {
+  content: '\25B2'; /* Upward triangle */
+  color: rgb(21, 176, 21);
+  margin-right: 5px;
+}
+
+/* Red triangle and red text for negative values */
+.negative {
+  color: red;
+}
+
+.negative::before {
+  content: '\25BC'; /* Downward triangle */
+  color: red;
+  margin-right: 5px;
+}
+
+
+/* Skills Section */
 
 .hidden {
   display: none;
@@ -158,12 +266,6 @@ canvas {
   font-size: 24px;
   margin-bottom: 20px;
 }
-
-/* .courses {
-  background-color: #2d2d4f;
-  padding: 20px;
-  border-radius: 8px;
-} */
 
 .course {
   background-color: #424274;
