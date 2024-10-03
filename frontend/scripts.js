@@ -14,6 +14,10 @@ function initializeData() {
 
           // Initialize the job buttons and skills/courses for the first job by default
           initializeJobButtons(data);
+
+          document.getElementById("showMonthlyGrowth").addEventListener("change", () => {
+            initializeTable(data); // Reinitialize the table when checkbox is toggled
+          });
         })
       .catch(error => console.error('Error fetching the data:', error));
 }
@@ -144,27 +148,74 @@ function initializeJobMarketTrendChart(data) {
 function initializeTable(data) {
   const tableBody = document.querySelector("#jobsTable tbody");
   tableBody.innerHTML = ""; // Clear any existing rows
+  
+  const showMonthlyGrowth = document.getElementById("showMonthlyGrowth").checked;
+
+  // Build the table header dynamically
+  const tableHeaderRow = document.querySelector("#jobsTable thead tr");
+  tableHeaderRow.innerHTML = `
+      <th>Job Title</th>
+      ${showMonthlyGrowth ? generateMonthlyGrowthHeaders() : ""}
+      <th>Average Monthly Growth</th>
+      <th>Expected Growth</th>
+  `;
 
   data.jobs.forEach(job => {
+      // Determine the class and add percentage symbol for average monthly growth
       const avgGrowthClass = job["avg_monthly_growth (%)"] > 0 ? "positive" : "negative";
+      const avgMonthlyGrowth = `${job["avg_monthly_growth (%)"].toFixed(2)}%`;
+
+      // Determine the class and add percentage symbol for expected growth
       const expectedGrowthClass = job["expected_growth (%)"] > 0 ? "positive" : "negative";
+      const expectedGrowth = `${job["expected_growth (%)"].toFixed(2)}%`;
 
-
+      // Create a new table row
       const row = document.createElement("tr");
-      row.innerHTML = `
+      let rowHTML = `
           <td>${job.name}</td>
-          <td class="${avgGrowthClass}">${job["avg_monthly_growth (%)"].toFixed(2)}</td>
-          <td class="${expectedGrowthClass}">${job["expected_growth (%)"].toFixed(2)}</td>
-        `;
+      `;
+
+      // Conditionally add the monthly growth columns
+      if (showMonthlyGrowth) {
+          rowHTML += generateMonthlyGrowthColumns(job);
+      }
+
+      rowHTML += `
+          <td class="${avgGrowthClass}">${avgMonthlyGrowth}</td>
+          <td class="${expectedGrowthClass}">${expectedGrowth}</td>
+      `;
+      
+      row.innerHTML = rowHTML;
       tableBody.appendChild(row);
   });
 
   // Add sorting functionality to headers
   document.querySelectorAll("#jobsTable th").forEach((header, index) => {
-      // Initialize sort direction for each column header
       header.setAttribute("data-sort-dir", "asc");
       header.addEventListener("click", () => sortTable(index, header));
   });
+}
+
+// Function to generate the monthly growth headers
+function generateMonthlyGrowthHeaders() {
+  return `
+      <th>Jan-Feb</th>
+      <th>Feb-Mar</th>
+      <th>Mar-Apr</th>
+      <th>Apr-May</th>
+      <th>May-Jun</th>
+      <th>Jun-Jul</th>
+      <th>Jul-Aug</th>
+      <th>Aug-Sep</th>
+  `;
+}
+
+// Function to generate the monthly growth columns for each job
+function generateMonthlyGrowthColumns(job) {
+  return job["monthly_growth (%)"].map(growth => {
+      const growthClass = growth > 0 ? "positive" : "negative";
+      return `<td class="${growthClass}">${growth.toFixed(2)}%</td>`;
+  }).join('');
 }
 
 function sortTable(columnIndex, header) {
