@@ -92,6 +92,9 @@ function initializeJobMarketTrendChart(data) {
             titleColor: '#FFFFFF', // Font color for tooltip title
             footerColor: '#FFFFFF', // Font color for tooltip footer
         },
+        datalabels: {
+          display: false, // Hide point labels
+        },
         annotation: {
           annotations: {
             verticalLine: {
