@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #1c1c3c;
   color: #ffffff;
   margin: 0;
@@ -79,21 +79,21 @@ p {
 .row-container {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 100%;
   padding: 10px 0;
 }
 
 .row-container p {
-  margin: 0; 
+  margin: 0;
 }
 
 .row-container div {
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 canvas {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -104,30 +104,34 @@ canvas {
 
 .chart-and-checkbox-container {
   display: flex;
-  align-items: flex-start; 
-  gap: 20px; 
+  align-items: flex-start;
+  gap: 20px;
 }
 
 #jobMarketTrendChartContainer {
-  flex: 3; 
+  flex: 3;
 }
 
 #jobCheckboxesContainer {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin-top: 20px;
 }
 
 #jobMarketTrendChart {
-  background-color: #1c1c3c; 
-  border-radius: 8px; 
-  max-width: 100%; 
+  background-color: #1c1c3c;
+  border-radius: 8px;
+  max-width: 100%;
 }
 
 #skillDemandChart {
-  background-color: #1c1c3c; 
-  border-radius: 8px; 
+  background-color: #1c1c3c;
+  border-radius: 8px;
+}
+
+#jobCheckboxesContainer label {
+  font-size: 17.5px;
 }
 
 /* Growth Rate Section */
@@ -149,7 +153,8 @@ thead {
   background-color: #0f3460;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   /* border-bottom: 1px solid #ddd; */
 }
@@ -179,7 +184,7 @@ td {
 }
 
 th:after {
-  content: ''; /* Default, no arrow */
+  content: ""; /* Default, no arrow */
   position: absolute;
   right: 10px;
   font-size: 0.8em;
@@ -188,12 +193,12 @@ th:after {
 
 /* Show the up arrow when sorted ascending */
 th.asc:after {
-  content: '\25B2'; /* Upward triangle */
+  content: "\25B2"; /* Upward triangle */
 }
 
 /* Show the down arrow when sorted descending */
 th.desc:after {
-  content: '\25BC'; /* Downward triangle */
+  content: "\25BC"; /* Downward triangle */
 }
 
 /* Green triangle and green text for positive values */
@@ -202,7 +207,7 @@ th.desc:after {
 }
 
 .positive::before {
-  content: '\25B2'; /* Upward triangle */
+  content: "\25B2"; /* Upward triangle */
   color: rgb(21, 176, 21);
   margin-right: 5px;
 }
@@ -213,11 +218,10 @@ th.desc:after {
 }
 
 .negative::before {
-  content: '\25BC'; /* Downward triangle */
+  content: "\25BC"; /* Downward triangle */
   color: red;
   margin-right: 5px;
 }
-
 
 /* Skills Section */
 
@@ -235,7 +239,7 @@ th.desc:after {
 
 .job-buttons button {
   font-weight: 400;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #424274;
   border: none;
   color: white;
@@ -246,6 +250,7 @@ th.desc:after {
   font-size: 14px;
   flex: 1 1 calc(25% - 10px);
   text-align: center;
+  font-size: 20px;
 }
 
 .job-buttons button:hover {
@@ -263,7 +268,7 @@ th.desc:after {
 }
 
 #courses-section h2 {
-  font-size: 24px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
@@ -287,19 +292,19 @@ th.desc:after {
   color: #ffffff;
   display: flex;
   align-items: center;
-  width: 100%; 
+  width: 100%;
 }
 
 .course-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%; 
+  width: 100%;
 }
 
 .course-info {
-  flex: 1; 
-  padding-right: 20px; 
+  flex: 1;
+  padding-right: 20px;
 }
 
 .course-info h4 {
@@ -338,13 +343,13 @@ th.desc:after {
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
-  border: 2px solid #6c6ca6; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  border: 2px solid #6c6ca6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .course-image img:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Data Descriptions and Additional Text */
@@ -364,4 +369,32 @@ th.desc:after {
   margin-bottom: 5px;
   font-size: 14px;
   color: #c3c3dd;
+}
+
+.job-market-trend h2 {
+  font-size: 36px; /* Adjust this value to your preferred size */
+}
+
+.job-market-trend p {
+  font-size: 25px; /* Adjust this value to your preferred size */
+}
+
+.growth-table-container h2 {
+  font-size: 36px;
+}
+
+.job-based-skills h2 {
+  font-size: 36px;
+}
+
+.job-based-skills p {
+  font-size: 25px;
+}
+
+.data-description h2 {
+  font-size: 18px;
+}
+
+.how-to-read p {
+  font-size: 14px;
 }

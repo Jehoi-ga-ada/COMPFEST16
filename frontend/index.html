@@ -1,112 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillCast - IT Talent Growth</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@latest"></script>
+    <script src="scripts.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillCast - IT Talent Growth</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@latest"></script>
-  <script src="scripts.js"></script>
-</head>
+  <body>
+    <header>
+      <div class="symbol">
+        <img src="assets/logo/logo.png" alt="logo" />
+      </div>
+      <div class="logo">
+        <h1>SkillCast</h1>
+      </div>
+      <div class="separator"></div>
+      <div class="slogan">
+        <p>
+          Forecast Your Future in IT: Demand Insights, Skill Trends, Smart
+          Learning
+        </p>
+      </div>
+    </header>
 
-<body>
-  <header>
-    <div class="symbol">
-      <img src="assets/logo/logo.png" alt="logo" />
-    </div>
-    <div class="logo">
-      <h1>SkillCast</h1>
-    </div>
-    <div class="separator"></div>
-    <div class="slogan">
-      <p>
-        Forecast Your Future in IT: Demand Insights, Skill Trends, Smart Learning
-      </p>
-    </div>
-  </header>
+    <section class="job-market-trend">
+      <h2>Job Market Trend</h2>
+      <p>What are the currently prospective jobs in the IT field?</p>
 
-  <section class="job-market-trend">
-    <h2>Job Market Trend</h2>
-    <p>What are the currently prospective jobs in the IT field?</p>
-
-    <div class="chart-and-checkbox-container">
-      <div id="jobMarketTrendChartContainer">
-        <canvas id="jobMarketTrendChart"></canvas>
+      <div class="chart-and-checkbox-container">
+        <div id="jobMarketTrendChartContainer">
+          <canvas id="jobMarketTrendChart"></canvas>
         </div>
-    
+
         <div id="jobCheckboxesContainer">
           <div id="jobCheckboxes"></div>
         </div>
-    </div>
-    
-    <div class="data-description">
-      <h4>About the data</h4>
-      <ul>
-        <li>- This prediction is based on 600k++ data from Jobstreet Indonesia</li>
-        <li>- The graph shows the average job postings in the last 30 days</li>
-        <li>- The prediction shows the expected job postings in the next 30 days</li>
-      </ul>
-    </div>
-
-    <div class="growth-table-container">
-      <h3>Growth Trends</h4>
-      <div class="row-container">
-        <p>Find out emerging and plummeting jobs from its growth trend over the months.</p>
-        <div>
-          <input type="checkbox" id="showMonthlyGrowth" />
-          <label for="showMonthlyGrowth">Show Monthly Growth</label>
-        </div>
       </div>
-      <table id="jobsTable">
-        <thead>
-          <tr>
-            <th onclick="sortTable(0)">Job Title</th>
-            <th onclick="sortTable(1)">Average Monthly Growth</th>
-            <th onclick="sortTable(0)">Expected Growth</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Data will be dynamically added here by JavaScript -->
-        </tbody>
-      </table>
-    </div>
-  </section>
 
-  <section class="job-based-skills">
-    <h2>Job-based Skills</h2>
-    <p>Select job titles and see what skills are in demand!</p>
-    <div class="job-buttons">
-      <!-- Job buttons will be dynamically added here by JavaScript -->
-    </div>
-
-    <!-- Elements to hide initially -->
-    <div id="skills-info" class="hidden">
-      <h3>Most Needed Skills for Selected Job</h3>
-      <canvas id="skillDemandChart"></canvas>
-      <div class="how-to-read">
-        <h4>How to read?</h4>
-        <p>Percentages indicate how often a skill was mentioned in job postings for the selected job.</p>
-      </div>
       <div class="data-description">
-        <h4>About the data</h4>
+        <h2>About the data</h2>
         <ul>
-          <li>- The analysis is based on 1.3M job postings from Linkedin.</li>
-          <li>- Skills were extracted by performing Named Entity Recognition (NER) on job description.</li>
+          <li>
+            - This prediction is based on 600k++ data from Jobstreet Indonesia
+          </li>
+          <li>
+            - The graph shows the average job postings in the last 30 days
+          </li>
+          <li>
+            - The prediction shows the expected job postings in the next 30 days
+          </li>
         </ul>
       </div>
-    </div>
-  </section>
 
-  <section id="courses-section" class="hidden">
-    <h2>Get started with these courses!</h2>
-    <!-- Course cards will be dynamically added here by JavaScript -->
-    <div id="courses-container"></div>
-  </section>
+      <div class="growth-table-container">
+        <h2>Growth Trends</h2>
+        <div class="row-container">
+          <p>
+            Find out emerging and plummeting jobs from its growth trend over the
+            months.
+          </p>
+          <div>
+            <input type="checkbox" id="showMonthlyGrowth" />
+            <label for="showMonthlyGrowth">Show Monthly Growth</label>
+          </div>
+        </div>
+        <table id="jobsTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">Job Title</th>
+              <th onclick="sortTable(1)">Average Monthly Growth</th>
+              <th onclick="sortTable(0)">Expected Growth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be dynamically added here by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-</body>
+    <section class="job-based-skills">
+      <h2>Job-based Skills</h2>
+      <p>Select job titles and see what skills are in demand!</p>
+      <div class="job-buttons">
+        <!-- Job buttons will be dynamically added here by JavaScript -->
+      </div>
 
+      <!-- Elements to hide initially -->
+      <div id="skills-info" class="hidden">
+        <h3>Most Needed Skills for Selected Job</h3>
+        <canvas id="skillDemandChart"></canvas>
+        <div class="how-to-read">
+          <h4>How to read?</h4>
+          <p>
+            Percentages indicate how often a skill was mentioned in job postings
+            for the selected job.
+          </p>
+        </div>
+        <div class="data-description">
+          <h4>About the data</h4>
+          <ul>
+            <li>- The analysis is based on 1.3M job postings from Linkedin.</li>
+            <li>
+              - Skills were extracted by performing Named Entity Recognition
+              (NER) on job description.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses-section" class="hidden">
+      <h2>Get started with these courses!</h2>
+      <!-- Course cards will be dynamically added here by JavaScript -->
+      <div id="courses-container"></div>
+    </section>
+  </body>
 </html>
